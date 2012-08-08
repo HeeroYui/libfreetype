@@ -19,8 +19,6 @@ LOCAL_CFLAGS += -W -Wall \
                 -DANDROID_FONT_HACK=1
 
 
-
-
 LOCAL_SRC_FILES:= $(FILE_LIST)
 
 

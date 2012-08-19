@@ -3,7 +3,6 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := freetype
-LOCAL_STATIC_LIBRARIES := 
 
 # load the common sources file of the platform
 include $(LOCAL_PATH)/file.mk

@@ -12,11 +12,12 @@ LOCAL_C_INCLUDES := $(addprefix $(LOCAL_PATH)/, $(sort $(dir $(FILE_LIST))))
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)
 
 LOCAL_CFLAGS += -W -Wall \
-                -fPIC -DPIC \
+                -DPIC \
                 -DDARWIN_NO_CARBON \
                 -DFT2_BUILD_LIBRARY \
                 -DANDROID_FONT_HACK=1
 
+#                -fPIC -DPIC \
 
 LOCAL_SRC_FILES:= $(FILE_LIST)
 

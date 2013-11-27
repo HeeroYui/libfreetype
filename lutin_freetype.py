@@ -7,6 +7,9 @@ import lutinTools
 def Create(target):
 	myModule = lutinModule.module(__file__, 'freetype', 'LIBRARY')
 	
+	#remove compilation warning (specific for external libs):
+	myModule.remove_compile_warning()
+	
 	myModule.AddSrcFile([
 		'freetype/base/ftbbox.c',
 		'freetype/base/ftbitmap.c',

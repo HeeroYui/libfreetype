@@ -1,16 +1,18 @@
 #!/usr/bin/python
-#for freetype : https://github.com/cdave1/freetype2-android
+import lutinModule as module
+import lutinTools as tools
 
-import lutinModule
-import lutinTools
+def get_desc():
+	return "FreeType lib (generate font with true type file)"
 
-def Create(target):
-	myModule = lutinModule.module(__file__, 'freetype', 'LIBRARY')
+
+def create(target):
+	myModule = module.Module(__file__, 'freetype', 'LIBRARY')
 	
 	#remove compilation warning (specific for external libs):
 	myModule.remove_compile_warning()
 	
-	myModule.AddSrcFile([
+	myModule.add_src_file([
 		'freetype/base/ftbbox.c',
 		'freetype/base/ftbitmap.c',
 		'freetype/base/ftglyph.c',
@@ -30,7 +32,7 @@ def Create(target):
 		'freetype/psnames/psnames.c',
 		'freetype/pshinter/pshinter.c'])
 	
-	myModule.CompileFlags_CC([
+	myModule.compile_flags_CC([
 		'-W',
 		'-Wall',
 		'-DPIC',
@@ -38,21 +40,21 @@ def Create(target):
 		'-DFT2_BUILD_LIBRARY',
 		'-DANDROID_FONT_HACK=1'])
 	
-	myModule.AddExportPath(lutinTools.GetCurrentPath(__file__))
-	myModule.AddPath(lutinTools.GetCurrentPath(__file__)+"/freetype/")
-	myModule.AddPath(lutinTools.GetCurrentPath(__file__)+"/freetype/internal")
-	myModule.AddPath(lutinTools.GetCurrentPath(__file__)+"/freetype/internal/services")
-	myModule.AddPath(lutinTools.GetCurrentPath(__file__)+"/freetype/psaux")
-	myModule.AddPath(lutinTools.GetCurrentPath(__file__)+"/freetype/pshinter")
-	myModule.AddPath(lutinTools.GetCurrentPath(__file__)+"/freetype/psnames")
-	myModule.AddPath(lutinTools.GetCurrentPath(__file__)+"/freetype/raster")
-	myModule.AddPath(lutinTools.GetCurrentPath(__file__)+"/freetype/sfnt")
-	myModule.AddPath(lutinTools.GetCurrentPath(__file__)+"/freetype/smooth")
-	myModule.AddPath(lutinTools.GetCurrentPath(__file__)+"/freetype/truetype")
-	myModule.AddPath(lutinTools.GetCurrentPath(__file__)+"/freetype/autofit")
-	myModule.AddPath(lutinTools.GetCurrentPath(__file__)+"/freetype/base")
-	myModule.AddPath(lutinTools.GetCurrentPath(__file__)+"/freetype/cff")
-	myModule.AddPath(lutinTools.GetCurrentPath(__file__)+"/freetype/config")
+	myModule.add_export_path(tools.get_current_path(__file__))
+	myModule.add_path(tools.get_current_path(__file__)+"/freetype/")
+	myModule.add_path(tools.get_current_path(__file__)+"/freetype/internal")
+	myModule.add_path(tools.get_current_path(__file__)+"/freetype/internal/services")
+	myModule.add_path(tools.get_current_path(__file__)+"/freetype/psaux")
+	myModule.add_path(tools.get_current_path(__file__)+"/freetype/pshinter")
+	myModule.add_path(tools.get_current_path(__file__)+"/freetype/psnames")
+	myModule.add_path(tools.get_current_path(__file__)+"/freetype/raster")
+	myModule.add_path(tools.get_current_path(__file__)+"/freetype/sfnt")
+	myModule.add_path(tools.get_current_path(__file__)+"/freetype/smooth")
+	myModule.add_path(tools.get_current_path(__file__)+"/freetype/truetype")
+	myModule.add_path(tools.get_current_path(__file__)+"/freetype/autofit")
+	myModule.add_path(tools.get_current_path(__file__)+"/freetype/base")
+	myModule.add_path(tools.get_current_path(__file__)+"/freetype/cff")
+	myModule.add_path(tools.get_current_path(__file__)+"/freetype/config")
 	
 	# add the currrent module at the 
 	return myModule

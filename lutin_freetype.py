@@ -56,6 +56,8 @@ def create(target):
 	myModule.add_path(tools.get_current_path(__file__)+"/freetype/cff")
 	myModule.add_path(tools.get_current_path(__file__)+"/freetype/config")
 	
+	myModule.compile_version_CC(1999)
+	
 	# add the currrent module at the 
 	return myModule
 	

@@ -1,6 +1,6 @@
 #!/usr/bin/python
-import lutinModule as module
-import lutinTools as tools
+import lutin.module as module
+import lutin.tools as tools
 
 def get_desc():
 	return "FreeType lib (generate font with true type file)"
@@ -32,7 +32,7 @@ def create(target):
 		'freetype/psnames/psnames.c',
 		'freetype/pshinter/pshinter.c'])
 	
-	myModule.compile_flags_CC([
+	myModule.compile_flags('c', [
 		'-W',
 		'-Wall',
 		'-DPIC',
